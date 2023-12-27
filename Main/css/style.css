@@ -1,0 +1,222 @@
+:root {
+    --primary: #FF3232;
+    --secondary: #FFEDED;
+    --red: #FF0000;
+    --white: #FFFFFF;
+    --black: #000000;
+    --text-color: #605D5D;
+
+
+    /* font  */
+    --font-typo-round: 'Typo Round Bold Demo', sans-serif;
+    --font-karla: 'Karla', sans-serif;
+}
+
+
+/* import fonts  */
+@font-face {
+    font-family: 'Typo Round Bold Demo', sans-serif;
+    src: url("../fonts/Typo_Round/Typo_Round_Regular_Demo.otf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Typo Round Bold Demo', sans-serif;
+    src: url("../fonts/Typo_Round/Typo_Round_Bold_Demo.otf");
+    font-weight: 500;
+    font-style: medium;
+}
+
+@font-face {
+    font-family: 'Typo Round Bold Demo', sans-serif;
+    src: url("../fonts/Typo_Round/Typo_Round_Bold_Demo.otf");
+    font-weight: 600;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Karla', sans-serif;
+    src: url("../fonts/Karla/static/Karla-Regular.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+/* global css  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+ul,
+ol {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--font-typo-round);
+    background: var(--white);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+
+
+/* header or nav design  */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.5s;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-typo-round);
+}
+
+header.sticky {
+    background: var(--bg-gradient-reverse);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header .my-nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .my-nav .logo {
+    font-size: 20px;
+}
+
+header .my-nav ul.menu {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header .my-nav ul.menu li {
+    position: relative;
+    list-style: none;
+}
+
+header .my-nav ul.menu li a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    text-transform: capitalize;
+}
+
+header .my-nav ul.menu li:hover a {
+    color: var(--secondary);
+}
+
+.toggle {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+
+    .logo,
+    .login {
+        display: none;
+    }
+
+    .menu {
+        position: fixed !important;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        width: 200px !important;
+        height: 250px !important;
+        background: var(--secondary);
+        transition: 0.5s;
+        z-index: 999;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        border-radius: 10px !important;
+        justify-content: center !important;
+        gap: 5px !important;
+
+    }
+
+    .menu.active {
+        left: 10px !important;
+    }
+
+    .menu li {
+        width: 80%;
+        height: 30px;
+        margin: auto;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu li:hover {
+        background-color: #CC23EC;
+
+    }
+
+    .toggle {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url("../img/icon/bar-icon.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+    }
+
+    header .my-nav {
+
+        justify-content: start;
+    }
+
+
+}
